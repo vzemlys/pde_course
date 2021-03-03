@@ -14,7 +14,7 @@ $$
 f(x_1, x_2, ..., x_d) = f(a) + \sum_{i=1}^d\frac{\partial f}{\partial x_i}(a)(x_i-a_i)+(\|x-a\|),  x\to a
 $$
 
-\$\$ f(x_1, x_2, ..., x_d) = f(a) + \sum*{j=1}\^n*\sum{i_1,...,i_j=1}^d^\frac{\partial^n f}{\partial x_{i_1}...\partial x_{i_j}}(a)(x\_{i_1}-a\_{i_1})\cdot\cdot\cdot(x\_{i_j}-a\_{i_j})+(\|x-a\|n), x\to a
+\$\$ f(x_1, x_2, ..., x_d) = f(a) + \sum*{j=1}\^n\*\sum{i_1,...,i_j=1}^d^\frac{\partial^n f}{\partial x_{i_1}...\partial x_{i_j}}(a)(x\_{i_1}-a\_{i_1})\cdot\cdot\cdot(x\_{i_j}-a\_{i_j})+(\|x-a\|n), x\to a
 
 \$\$
 

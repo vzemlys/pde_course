@@ -36,9 +36,9 @@ $$
 y_i=X_i\beta+u_i
 $$
 
-$$
+\$\$
 
-$$
+\$\$
 
 $$
 \begin{pmatrix}y_{i1}\\\vdots\\y_{iT}\end{pmatrix} = \begin{pmatrix}x_{i11} &... &x_{i1K}\\
