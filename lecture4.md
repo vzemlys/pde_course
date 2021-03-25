@@ -1,17 +1,10 @@
-$$
-y_i = X_i\beta + u_i\\
+\$\$ y_i = X_i\beta + u_i\\
 
-\hat\beta=argmin_{\beta}\sum_{i=1}^n(y_i-X_i\beta)'(y_i-X_i\beta) = argmin_{\beta}\sum_{i=1}^n\|y_i-X_i\beta\|^2\\
-\|z\| = \sqrt{\sum_{i=1}^nz_i^2}\\
-\|z\|_p=(\sum_{i=1}^n|z_i|^p)^{1/p} 
-$$
+\hat\beta=argmin\_{\beta}\sum*{i=1}\^n(y_i-X_i\beta)'(y_i-X_i\beta) = argmin{\beta}\sum\_{i=1}^n\|y_i-X_i^\beta\|2\\ \|z\| = \sqrt{\sum_{i=1}^nz_i^2}\\ \|z\|p=(\*\sum{i=1}^n\|z_i\|^p)\^{1/p} \$\$
 
-$$
-X_i\sim p_\theta\\
-X_i\sim F_\theta\\
+\$\$ X_i\sim p\_\theta\\ X_i\sim F\_\theta\\
 
-\hat\theta_{LLF} = argmax_\theta\sum_{i=1}^n\log p_\theta(X_i)
-$$
+\hat\theta*{LLF} = argmax\theta\sum*{i=1}\^n\log p\theta(X_i) \$\$
 
 $$
 p_\beta (y, X) = \frac{1}{\sigma\sqrt{2\pi}} \exp(\frac{-(y-X\beta)^2}{2\sigma^2})\\
