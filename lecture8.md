@@ -11,13 +11,13 @@ $$
 u_{it}= u_{i,t-1}+e_{it} = \sum_{s=1}^te_{is}
 $$
 
-\$\$ \hat\beta*{FE}-*\beta=(\sum{i=1}^N^\sum*{t=1}^T^*\ddot x\_{it}'\ddot x\_{it}){-1}(\sum{i=1}N\sum*{t=1}\^T*\ddot x{it}'\ddot u\_{it})\\ \hat\beta*{FD}-*\beta=(\sum{i=1}^N^\sum*{t=1}^T^*\Delta x\_{it}'\Delta x\_{it}){-1}(\sum{i=1}N\sum*{t=1}\^T*\Delta x{it}'\Delta u\_{it})\\
+\$\$ \hat\beta*{FE}-\beta=(\sum{i=1}^N^\sum*{t=1}^T^\ddot x\_{it}'\ddot x\_{it}){-1}(\sum{i=1}N\sum*{t=1}\^T\ddot x{it}'\ddot u\_{it})\\ \hat\beta*{FD}-\beta=(\sum{i=1}^N^\sum*{t=1}^T^\Delta x\_{it}'\Delta x\_{it}){-1}(\sum{i=1}N\sum*{t=1}\^T\Delta x{it}'\Delta u\_{it})\\
 
 \$\$
 
 \$\$ \lambda = 1 - \frac{\sigma_u^2}{\sigma_u^2+T\sigma_c^2}\\
 
-y\_{it} - \lambda\bar{y}*{it} = y*{it}, \text{ if } \sigma*c\^2=0\\ y*{it} - \lambda\bar{y}*{it} =y*{it}-\bar{y}\_{it} \text{ if } \lambda = 1. \$\$
+y\_{it} - \lambda\bar{y}*{it} = y*{it}, \text{ if } \sigma*c\^2=0\\ y*{it} -* \lambda\bar{y}{it} =y\*{it}-\bar{y}\_{it} \text{ if } \lambda = 1. \$\$
 
 $$
 \hat\theta\to N(0, \Sigma)\\
