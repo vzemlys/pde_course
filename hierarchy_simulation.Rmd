@@ -1,0 +1,40 @@
+---
+title: "Hierarchical model"
+output: html_notebook
+---
+
+
+```{r}
+library(dplyr)
+library(ggplot2)
+set.seed(100)
+NN <- 30
+TT <- 5
+x <- rnorm(NN*TT)
+u <- rnorm(NN*TT)/3
+c <- rep(rnorm(NN)/2, length.out = NN*TT)
+v <- rep(rnorm(NN)/3, length.out = NN*TT)
+
+NT <- expand.grid(ind = 1:NN, time = 1:TT)
+
+y <- 1+ x*2+c + u
+yy <- 1+ x*(2+v)+c+u
+dt <- cbind(NT, data.frame(x = x, y = y, yy = yy )) %>% mutate(ind = factor(ind))
+```
+
+```{r}
+ggplot(aes(x = x, y = y, colour = ind), data = dt)+geom_point()+geom_smooth(method= "lm")
+```
+```{r}
+ggplot(aes(x = x, y = y), data = dt)+geom_point()+geom_smooth(method= "lm")
+```
+
+```{r}
+ggplot(aes(x = x, y = y), data = dt)+geom_point(aes(color=ind))+geom_smooth(method= "lm")
+```
+
+```{r}
+ggplot(aes(x = x, y = yy), data = dt)+geom_point()+geom_smooth(method= "lm")
+```
+
+
