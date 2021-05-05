@@ -1,0 +1,45 @@
+---
+title: "Panel data model examples"
+output: html_notebook
+---
+
+
+```{r}
+library(plm)
+library(dplyr)
+library(wooldridge)
+library(ggplot2)
+```
+
+```{r}
+data(jtrain)
+ggplot(aes(y = lscrap, x = lscrap_1, colour= factor(grant)), data = jtrain) + facet_wrap(~year)+geom_point()
+```
+
+
+
+
+
+```{r}
+lm(lscrap~d88 + d89+ lscrap_1+ grant+grant_1, data= jtrain) %>% summary
+```
+
+
+```{r}
+plm(lscrap~d88 + d89+grant+grant_1+union, data= pdata.frame(jtrain,index=c("fcode", "year")), effect = "individual", model = "random") %>% summary
+```
+
+
+
+```{r}
+jtrain1 <- jtrain[,c(2,1,3:ncol(jtrain))]
+p1 <- plm(lscrap~d88 + d89+grant+grant_1+union, data= jtrain1, effect = "individual", model = "random")
+
+
+summary(p1, vcovHC(p1, method="white1"))
+```
+
+```{r}
+jtrain1 <- jtrain[,c(2,1,3:ncol(jtrain))]
+plm(lscrap~d88 + d89+grant+grant_1+union, data= jtrain1, effect = "individual", model = "within") %>% summary
+```
