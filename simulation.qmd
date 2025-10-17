@@ -1,0 +1,72 @@
+---
+title: "simulation_exercise"
+format: html
+---
+
+## Data generation function
+
+
+```{r}
+gen <- function(n) {
+  sapply(1:1000, function(m) {
+    x <- rnorm(n)
+    sqrt(n)*mean(x)/sd(x)
+  })
+}
+gen2 <- function(n) {
+  sapply(1:1000, function(m) {
+    x <- runif(n)
+    sqrt(n)*(mean(x)-0.5)/sd(x)
+  })
+}
+```
+
+## Normal example
+
+### n=10
+```{r}
+xx <- seq(-3,3, by=0.01)
+yy <- dnorm(xx)
+
+plot(density(gen(10)))
+lines(xx,yy, col = 2)
+```
+
+
+### n=100
+```{r}
+plot(density(gen(100)))
+lines(xx,yy, col = 2)
+```
+
+
+### n=1000
+```{r}
+plot(density(gen(1000)))
+lines(xx,yy, col = 2)
+```
+
+
+
+## Uniform example
+
+### n=10
+```{r}
+
+plot(density(gen2(10)))
+lines(xx,yy, col = 2)
+```
+
+
+### n=100
+```{r}
+plot(density(gen2(100)))
+lines(xx,yy, col = 2)
+```
+
+
+### n=1000
+```{r}
+plot(density(gen2(1000)))
+lines(xx,yy, col = 2)
+```

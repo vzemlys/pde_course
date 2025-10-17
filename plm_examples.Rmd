@@ -1,6 +1,22 @@
 ---
 title: "Panel data model examples"
-output: html_notebook
+format: 
+    html:
+        embed-resources: true
+        code-fold: true
+        df-print: paged
+        theme: cosmo
+        toc: true
+        toc-depth: 3
+        toc-location: left
+        self-contained: true
+        
+knitr: 
+  opts_chunk: 
+    echo: false
+    message: false
+    warning: false
+
 ---
 
 
@@ -10,18 +26,30 @@ library(dplyr)
 library(wooldridge)
 library(ggplot2)
 ```
+# Exploratory data analysis
 
 ```{r}
 data(jtrain)
-ggplot(aes(y = lscrap, x = lscrap_1, colour= factor(grant)), data = jtrain) + facet_wrap(~year)+geom_point()
+
+jtrain1 <- jtrain %>% filter(year == 1988, grant == 0)
+jtrain2 <- jtrain %>% filter(year == 1988, grant == 1)
+
+quantile(jtrain1$lscrap-jtrain1$lscrap_1,na.rm = TRUE)
+quantile(jtrain2$lscrap-jtrain2$lscrap_1,na.rm = TRUE)
+```
+
+How many firms report the scrap rate?
+```{r}
+ jtrain %>% group_by(year) %>% summarise(nz=  sum(is.na(lscrap)), n = n())
+```
+
+```{r}
+lm(lscrap~d88 + d89+grant+grant_1, data= jtrain) %>% summary
 ```
 
 
-
-
-
 ```{r}
-lm(lscrap~d88 + d89+ lscrap_1+ grant+grant_1, data= jtrain) %>% summary
+lm(lscrap~  d89+ lscrap_1+grant+grant_1, data= jtrain) %>% summary
 ```
 
 
